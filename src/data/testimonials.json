@@ -1,0 +1,44 @@
+{
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "name": "田中 太郎",
+      "position": "CTO",
+      "company": "Tech Innovations株式会社",
+      "avatar": "https://i.pravatar.cc/150?img=12",
+      "rating": 5,
+      "comment": "Azure OpenAIを活用したRAGシステムの構築をお願いしました。技術力の高さはもちろん、ビジネス視点でのアドバイスも的確で、期待以上の成果を得られました。",
+      "project": "RAGシステム構築プロジェクト"
+    },
+    {
+      "id": "testimonial-2",
+      "name": "佐藤 花子",
+      "position": "プロダクトマネージャー",
+      "company": "Digital Solutions合同会社",
+      "avatar": "https://i.pravatar.cc/150?img=47",
+      "rating": 5,
+      "comment": "フロントエンドからバックエンドまで一貫して対応いただき、スムーズにプロジェクトが進行しました。技術的な質問にも丁寧に答えていただき、チーム全体のスキルアップにも繋がりました。",
+      "project": "Webアプリケーション開発"
+    },
+    {
+      "id": "testimonial-3",
+      "name": "鈴木 一郎",
+      "position": "エンジニアリングマネージャー",
+      "company": "Cloud Services株式会社",
+      "avatar": "https://i.pravatar.cc/150?img=33",
+      "rating": 5,
+      "comment": "Azureアーキテクチャの設計から実装まで、非常に高いレベルでサポートいただきました。セキュリティやコスト最適化の観点も含めた総合的な提案が素晴らしかったです。",
+      "project": "クラウドインフラ構築"
+    },
+    {
+      "id": "testimonial-4",
+      "name": "山田 美咲",
+      "position": "システム部長",
+      "company": "Enterprise Solutions Inc.",
+      "avatar": "https://i.pravatar.cc/150?img=45",
+      "rating": 5,
+      "comment": "Document Intelligenceを使った文書処理自動化により、大幅な業務効率化を実現できました。導入後のサポートも手厚く、安心してお任せできました。",
+      "project": "文書処理自動化システム"
+    }
+  ]
+}

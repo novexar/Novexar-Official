@@ -1,0 +1,19 @@
+{
+  "statistics": [
+    {
+      "id": "experience",
+      "value": "5+",
+      "icon": "Calendar"
+    },
+    {
+      "id": "projects",
+      "value": "50+",
+      "icon": "FolderKanban"
+    },
+    {
+      "id": "technologies",
+      "value": "20+",
+      "icon": "Code"
+    }
+  ]
+}

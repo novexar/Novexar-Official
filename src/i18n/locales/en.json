@@ -1,0 +1,94 @@
+{
+  "site": {
+    "title": "POXCON",
+    "description": "Azure & AI Consultant | Full Stack Engineer | Cloud Solutions Architect",
+    "copyright": "© 2024 POXCON. All rights reserved."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "aboutMe": "About Me",
+    "services": "Services",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Developing New Projects",
+    "title1": "Clean Code.",
+    "title2": "Scalable Apps.",
+    "title3": "Reliable Delivery.",
+    "description": "Azure & AI Consultant | Full Stack Engineer specializing in cloud-native solutions and intelligent applications",
+    "scrollText": "Scroll to explore"
+  },
+  "about": {
+    "badge": "About Me",
+    "title": "About Me",
+    "paragraph1": "I am an Azure & AI consultant and engineer with a passion for building scalable cloud solutions and intelligent applications. With expertise in cloud architecture and AI integration, I help businesses transform their digital presence.",
+    "paragraph2": "My approach combines technical excellence with business understanding, ensuring that every solution not only works flawlessly but also delivers measurable value. I specialize in Azure cloud services, full-stack development, and cutting-edge AI technologies.",
+    "paragraph3": "Whether it's architecting complex cloud infrastructures, developing intelligent chatbots, or creating seamless user experiences, I bring dedication and expertise to every project.",
+    "developer": "Developer",
+    "engineer": "Engineer",
+    "consultant": "Consultant",
+    "architect": "Architect"
+  },
+  "stats": {
+    "title": "By the Numbers",
+    "experience": {
+      "label": "Years Experience",
+      "value": "5"
+    },
+    "projects": {
+      "label": "Projects Completed",
+      "value": "50"
+    },
+    "technologies": {
+      "label": "Technologies",
+      "value": "20"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "description": "What I can do for you",
+    "azure-architecture": {
+      "title": "Azure Architecture & Consulting",
+      "description": "Cloud infrastructure design and implementation"
+    },
+    "fullstack-development": {
+      "title": "Full Stack Development",
+      "description": "End-to-end application development"
+    },
+    "cognitive-services": {
+      "title": "AI & Cognitive Services",
+      "description": "Intelligent application development"
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "description": "My technical expertise"
+  },
+  "experience": {
+    "title": "Certifications",
+    "description": "Professional credentials",
+    "certifications": {
+      "title": "Microsoft Azure Certifications"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Featured work and case studies",
+    "viewOnGithub": "View Project on GitHub"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Let's discuss your project",
+    "github": "View on GitHub",
+    "email": "Email Me",
+    "contactMe": "Contact Me"
+  },
+  "buttons": {
+    "contactMe": "Contact Me",
+    "startProject": "Start your project"
+  }
+}
