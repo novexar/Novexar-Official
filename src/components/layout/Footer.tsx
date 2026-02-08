@@ -1,11 +1,7 @@
 import { Github, Linkedin, ArrowUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-interface FooterProps {
-  copyright: string;
-}
-
-export function Footer({ copyright }: FooterProps) {
+export function Footer() {
   const { t } = useTranslation();
 
   const scrollToTop = () => {

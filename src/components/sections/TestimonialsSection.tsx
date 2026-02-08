@@ -36,7 +36,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
             Client Testimonials
           </h2>
           <p className="text-muted-foreground text-lg">
-            クライアント様からいただいた声
+            Feedback from clients
           </p>
         </motion.div>
 
@@ -73,11 +73,11 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    "{currentTestimonial.comment}"
+                    &ldquo;{currentTestimonial.comment}&rdquo;
                   </p>
                   <div className="pt-4 border-t border-border">
                     <span className="text-sm text-muted-foreground">
-                      プロジェクト: <span className="text-foreground font-semibold">{currentTestimonial.project}</span>
+                      Project: <span className="text-foreground font-semibold">{currentTestimonial.project}</span>
                     </span>
                   </div>
                 </CardContent>

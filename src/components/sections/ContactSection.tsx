@@ -1,7 +1,10 @@
 import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { Github } from 'lucide-react';
 import { useDeviceCapability } from '@/hooks/useDeviceCapability';
 import { LazyCanvas } from '@/components/3d/common/LazyCanvas';
+import contentData from '@/data/content.json';
 
 const ContactParticles = lazy(() =>
   import('@/components/3d/contact/ContactParticles').then((m) => ({ default: m.ContactParticles }))
@@ -10,6 +13,7 @@ const ContactParticles = lazy(() =>
 export const ContactSectionNew = () => {
   const capability = useDeviceCapability();
   const show3D = capability !== 'low';
+  const { t } = useTranslation();
 
   return (
     <section id="contact" className="relative min-h-screen flex items-center justify-center bg-[#030303] overflow-hidden">
@@ -32,48 +36,42 @@ export const ContactSectionNew = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-sm font-['Inter'] tracking-[0.5em] text-azure-light uppercase mb-8"
+          className="text-4xl font-bold mb-4 text-gradient font-heading"
         >
-          Ready to Start?
+          {t('contact.title')}
         </motion.h2>
 
-        <motion.h3
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-8xl font-bold font-heading mb-16"
-        >
-          LET'S BUILD <br />
-          <span className="text-transparent text-stroke-white hover:text-white transition-colors duration-500 cursor-none">
-            SOMETHING GREAT
-          </span>
-        </motion.h3>
-
-        <motion.div
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-muted-foreground text-lg mb-12"
+        >
+          {t('contact.description')}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col sm:flex-row justify-center gap-6"
         >
           <a
-            href="mailto:contact@example.com"
-            className="relative inline-block group"
+            href={contentData.contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
           >
-            <span className="absolute inset-0 border border-azure rounded-full scale-110 opacity-0 group-hover:scale-125 group-hover:opacity-100 transition-all duration-500" />
-            <span className="relative block px-12 py-6 bg-white text-black font-heading font-bold tracking-wider rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105">
-              GET IN TOUCH
-            </span>
+            <Github className="w-5 h-5" />
+            {t('contact.github')}
+          </a>
+          <a
+            href="mailto:contact@poxcon.dev"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold"
+          >
+            {t('contact.email')}
           </a>
         </motion.div>
-
-        <div className="mt-20 flex justify-center gap-8">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors uppercase text-xs tracking-widest">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors uppercase text-xs tracking-widest">LinkedIn</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors uppercase text-xs tracking-widest">Twitter</a>
-        </div>
-
-        <footer className="absolute bottom-8 left-0 w-full text-center text-gray-600 text-xs font-['Inter'] tracking-widest uppercase">
-          &copy; 2024 POXCON. All Rights Reserved.
-        </footer>
       </div>
     </section>
   );

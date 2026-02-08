@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useDeviceCapability } from '@/hooks/useDeviceCapability';
 import { LazyCanvas } from '@/components/3d/common/LazyCanvas';
 import skillsData from '@/data/skills.json';
@@ -32,6 +33,7 @@ const SkillScrollFallback = () => {
 export const SkillsSection = () => {
   const capability = useDeviceCapability();
   const show3D = capability === 'high' || capability === 'medium';
+  const { t } = useTranslation();
 
   return (
     <section id="skills" className="relative py-20 bg-[#030303]">
@@ -44,10 +46,10 @@ export const SkillsSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-sm font-['Inter'] tracking-[0.5em] text-azure-light uppercase mb-4">
-            Technologies
+            {t('skills.description')}
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold font-heading">
-            TECH STACK
+            {t('skills.title')}
           </h3>
         </motion.div>
 

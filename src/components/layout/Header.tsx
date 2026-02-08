@@ -3,8 +3,8 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { NavigationItem } from '@/types';
-import { Button } from '@/components_legacy/ui/button';
-import { LanguageToggle } from '@/components_legacy/ui/language-toggle';
+import { Button } from '@/components/ui/button';
+import { LanguageToggle } from '@/components/ui/language-toggle';
 
 interface HeaderProps {
   navigation: NavigationItem[];

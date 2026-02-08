@@ -1,5 +1,6 @@
 import { lazy, Suspense, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useDeviceCapability } from '@/hooks/useDeviceCapability';
 import { LazyCanvas } from '@/components/3d/common/LazyCanvas';
 import servicesData from '@/data/services.json';
@@ -89,6 +90,7 @@ const ServiceCard = ({ service, index, show3D }: ServiceCardProps) => {
 export const ServicesSection = () => {
   const capability = useDeviceCapability();
   const show3D = capability !== 'low';
+  const { t } = useTranslation();
 
   return (
     <section id="services" className="relative py-20 bg-[#030303]">
@@ -101,10 +103,10 @@ export const ServicesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-sm font-['Inter'] tracking-[0.5em] text-azure-light uppercase mb-4">
-            What I Do
+            {t('services.description')}
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold font-heading">
-            SERVICES
+            {t('services.title')}
           </h3>
         </motion.div>
 

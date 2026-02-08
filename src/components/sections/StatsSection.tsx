@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useDeviceCapability } from '@/hooks/useDeviceCapability';
 import { LazyCanvas } from '@/components/3d/common/LazyCanvas';
 import statsData from '@/data/stats.json';
@@ -13,9 +14,21 @@ const RING_COLORS = ['#3B82F6', '#38BDF8', '#8B5CF6', '#3B82F6'];
 export const StatsSection = () => {
   const capability = useDeviceCapability();
   const show3D = capability !== 'low';
+  const { t } = useTranslation();
 
   return (
     <section id="stats" className="relative py-20 bg-[#030303]">
+      <div className="container mx-auto px-6 mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center text-gradient font-heading"
+        >
+          {t('stats.title')}
+        </motion.h2>
+      </div>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {statsData.statistics.map((stat, i) => (
