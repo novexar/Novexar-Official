@@ -20,7 +20,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   return (
     <section id="services" className="py-20 bg-gradient-to-b from-black to-blue-900/20">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gradient">
+        <h2 className="text-4xl font-bold text-center mb-16 text-gradient font-heading">
           {t('services.title')}
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -29,8 +29,8 @@ export function ServicesSection({ services }: ServicesSectionProps) {
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >

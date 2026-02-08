@@ -46,7 +46,7 @@ export const SkillsSection = () => {
           <h2 className="text-sm font-['Inter'] tracking-[0.5em] text-azure-light uppercase mb-4">
             Technologies
           </h2>
-          <h3 className="text-4xl md:text-6xl font-bold font-['Syncopate']">
+          <h3 className="text-4xl md:text-6xl font-bold font-heading">
             TECH STACK
           </h3>
         </motion.div>

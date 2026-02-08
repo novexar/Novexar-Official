@@ -10,6 +10,11 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+      heading: ['Space Grotesk', 'Noto Sans JP', 'sans-serif'],
+      mono: ['JetBrains Mono', 'monospace'],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -54,6 +59,9 @@ export default {
           bg: '#0a0a0a',
           surface: '#1a1a1a',
         },
+        tertiary: 'hsl(var(--tertiary))',
+        'accent-warm': 'hsl(var(--accent-warm))',
+        glow: 'hsl(var(--glow))',
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -26,13 +26,13 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
     <section id="testimonials" className="py-20 bg-gradient-to-b from-black to-purple-900/20">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, filter: 'blur(10px)' }}
+          whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gradient">
+          <h2 className="text-4xl font-bold mb-4 text-gradient font-heading">
             Client Testimonials
           </h2>
           <p className="text-muted-foreground text-lg">

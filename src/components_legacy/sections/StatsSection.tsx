@@ -70,9 +70,9 @@ export function StatsSection({ statistics }: StatsSectionProps) {
             return (
               <motion.div
                 key={stat.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, scale: 0.7 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
                 viewport={{ once: true }}
                 className="text-center"
               >
@@ -83,7 +83,7 @@ export function StatsSection({ statistics }: StatsSectionProps) {
                   <div className="inline-block p-4 rounded-full bg-primary/10 mb-4">
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-bold text-gradient mb-2">
+                  <h3 className="text-4xl md:text-5xl font-bold text-gradient mb-2 font-heading">
                     <AnimatedCounter target={displayValue} />
                   </h3>
                   <p className="text-lg font-semibold">{t(`stats.${stat.id}.label`)}</p>

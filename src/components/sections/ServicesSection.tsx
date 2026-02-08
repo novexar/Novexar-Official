@@ -66,7 +66,7 @@ const ServiceCard = ({ service, index, show3D }: ServiceCardProps) => {
         </div>
       )}
 
-      <h4 className="text-xl font-bold font-['Syncopate'] mb-3 text-white">
+      <h4 className="text-xl font-bold font-heading mb-3 text-white">
         {service.title}
       </h4>
       <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -103,7 +103,7 @@ export const ServicesSection = () => {
           <h2 className="text-sm font-['Inter'] tracking-[0.5em] text-azure-light uppercase mb-4">
             What I Do
           </h2>
-          <h3 className="text-4xl md:text-6xl font-bold font-['Syncopate']">
+          <h3 className="text-4xl md:text-6xl font-bold font-heading">
             SERVICES
           </h3>
         </motion.div>

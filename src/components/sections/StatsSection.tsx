@@ -42,7 +42,7 @@ export const StatsSection = () => {
               )}
 
               <div className="relative z-10">
-                <h4 className="text-4xl md:text-5xl font-bold text-white mb-2 font-['Syncopate']">
+                <h4 className="text-4xl md:text-5xl font-bold text-white mb-2 font-heading">
                   {stat.value}
                 </h4>
                 <p className="text-xs text-gray-500 uppercase tracking-wider">

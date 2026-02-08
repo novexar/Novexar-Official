@@ -41,7 +41,7 @@ export const ContactSectionNew = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-8xl font-bold font-['Syncopate'] mb-16"
+          className="text-5xl md:text-8xl font-bold font-heading mb-16"
         >
           LET'S BUILD <br />
           <span className="text-transparent text-stroke-white hover:text-white transition-colors duration-500 cursor-none">
@@ -59,7 +59,7 @@ export const ContactSectionNew = () => {
             className="relative inline-block group"
           >
             <span className="absolute inset-0 border border-azure rounded-full scale-110 opacity-0 group-hover:scale-125 group-hover:opacity-100 transition-all duration-500" />
-            <span className="relative block px-12 py-6 bg-white text-black font-['Syncopate'] font-bold tracking-wider rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105">
+            <span className="relative block px-12 py-6 bg-white text-black font-heading font-bold tracking-wider rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105">
               GET IN TOUCH
             </span>
           </a>

@@ -40,7 +40,7 @@ export const HeroSection = () => {
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-6xl md:text-[10rem] font-bold tracking-tighter font-['Syncopate'] leading-none text-transparent text-stroke-white mix-blend-overlay opacity-50"
+            className="text-6xl md:text-[10rem] font-bold tracking-tighter font-heading leading-none text-transparent text-stroke-white mix-blend-overlay opacity-50"
           >
             CREATIVE
           </motion.h1>
@@ -51,7 +51,7 @@ export const HeroSection = () => {
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-6xl md:text-[10rem] font-bold tracking-tighter font-['Syncopate'] leading-none text-white mix-blend-overlay"
+            className="text-6xl md:text-[10rem] font-bold tracking-tighter font-heading leading-none text-white mix-blend-overlay"
           >
             DEVELOPER
           </motion.h1>

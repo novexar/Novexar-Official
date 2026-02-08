@@ -44,7 +44,7 @@ export const AboutSectionNew = () => {
               <h2 className="text-sm font-['Inter'] tracking-[0.5em] text-azure-light uppercase mb-4">
                 The Core
               </h2>
-              <h3 className="text-4xl md:text-6xl font-bold font-['Syncopate'] leading-tight mb-8">
+              <h3 className="text-4xl md:text-6xl font-bold font-heading leading-tight mb-8">
                 ENGINEERING <br />
                 <span className="text-transparent text-stroke-white opacity-50">THE FUTURE</span>
               </h3>
@@ -59,7 +59,7 @@ export const AboutSectionNew = () => {
             <div className="grid grid-cols-2 gap-8">
               {statsData.statistics.map((stat) => (
                 <div key={stat.id}>
-                  <h4 className="text-3xl font-bold text-white mb-2 font-['Syncopate']">{stat.value}</h4>
+                  <h4 className="text-3xl font-bold text-white mb-2 font-heading">{stat.value}</h4>
                   <p className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</p>
                 </div>
               ))}
@@ -72,7 +72,7 @@ export const AboutSectionNew = () => {
 
         {/* Experience Timeline */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-['Syncopate'] text-white mb-12 text-center">Experience</h3>
+          <h3 className="text-2xl font-heading text-white mb-12 text-center">Experience</h3>
           <div className="space-y-12 border-l border-gray-800 pl-8 md:pl-12 relative">
             {experienceData.timeline.map((item, index) => (
               <motion.div
