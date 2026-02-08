@@ -1,45 +1,78 @@
+import { lazy, Suspense } from 'react';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
-import { CanvasLayout } from '@/components/layout/CanvasLayout';
 import { CustomCursor } from '@/components/ui/CustomCursor';
-import { Hero3D } from '@/components/features/Hero/Hero3D';
-import { HeroContent } from '@/components/features/Hero/HeroContent';
-import { WorkSection } from '@/components/features/Work/WorkSection';
-import { AboutSection } from '@/components/features/About/AboutSection';
-import { SkillsCloud } from '@/components/features/About/SkillsCloud';
-import { ContactSection } from '@/components/features/Contact/ContactSection';
-import { useThree } from '@react-three/fiber';
-
+import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
+import { HeroSection } from '@/components/sections/HeroSection';
 
-const Scene = () => {
-  const { height } = useThree((state) => state.viewport);
-  return (
-    <ErrorBoundary fallback={null}>
-      <Hero3D />
-      <WorkSection />
-      <group position={[0, -height * 2, 0]}>
-        <SkillsCloud />
-      </group>
-      <ambientLight intensity={0.5} />
-    </ErrorBoundary>
-  );
-};
+// Lazy load non-critical sections
+const GlobalBackground = lazy(() =>
+  import('@/components/3d/background/GlobalBackground').then((m) => ({ default: m.GlobalBackground }))
+);
+const ServicesSection = lazy(() =>
+  import('@/components/sections/ServicesSection').then((m) => ({ default: m.ServicesSection }))
+);
+const SkillsSection = lazy(() =>
+  import('@/components/sections/SkillsSection').then((m) => ({ default: m.SkillsSection }))
+);
+const StatsSection = lazy(() =>
+  import('@/components/sections/StatsSection').then((m) => ({ default: m.StatsSection }))
+);
+const AboutSectionNew = lazy(() =>
+  import('@/components/sections/AboutSection').then((m) => ({ default: m.AboutSectionNew }))
+);
+const ContactSectionNew = lazy(() =>
+  import('@/components/sections/ContactSection').then((m) => ({ default: m.ContactSectionNew }))
+);
 
 function App() {
   return (
     <SmoothScroll>
       <CustomCursor />
+      <ScrollProgress />
       <div className="relative w-full min-h-screen bg-[#030303] text-white">
-        <CanvasLayout>
-          <Scene />
-        </CanvasLayout>
+        {/* Global star background */}
+        <ErrorBoundary fallback={null}>
+          <Suspense fallback={null}>
+            <GlobalBackground />
+          </Suspense>
+        </ErrorBoundary>
 
-        {/* HTML Content Layer */}
+        {/* HTML + 3D Content Sections */}
         <main className="relative z-10">
-          <HeroContent />
-          <div className="h-screen"></div> {/* Spacer for Work Section scroll */}
-          <AboutSection />
-          <ContactSection />
+          <ErrorBoundary fallback={null}>
+            <HeroSection />
+          </ErrorBoundary>
+
+          <Suspense fallback={null}>
+            <ErrorBoundary fallback={null}>
+              <ServicesSection />
+            </ErrorBoundary>
+          </Suspense>
+
+          <Suspense fallback={null}>
+            <ErrorBoundary fallback={null}>
+              <SkillsSection />
+            </ErrorBoundary>
+          </Suspense>
+
+          <Suspense fallback={null}>
+            <ErrorBoundary fallback={null}>
+              <StatsSection />
+            </ErrorBoundary>
+          </Suspense>
+
+          <Suspense fallback={null}>
+            <ErrorBoundary fallback={null}>
+              <AboutSectionNew />
+            </ErrorBoundary>
+          </Suspense>
+
+          <Suspense fallback={null}>
+            <ErrorBoundary fallback={null}>
+              <ContactSectionNew />
+            </ErrorBoundary>
+          </Suspense>
         </main>
       </div>
     </SmoothScroll>
