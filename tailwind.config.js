@@ -45,6 +45,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        azure: {
+          DEFAULT: '#0078D4',
+          light: '#50E6FF',
+          dark: '#004C87',
+        },
+        dark: {
+          bg: '#0a0a0a',
+          surface: '#1a1a1a',
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

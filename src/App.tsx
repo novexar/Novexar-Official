@@ -1,55 +1,48 @@
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { HeroSection } from '@/components/sections/HeroSection';
-import { AboutSection } from '@/components/sections/AboutSection';
-import { StatsSection } from '@/components/sections/StatsSection';
-import { ServicesSection } from '@/components/sections/ServicesSection';
-import { SkillsSection } from '@/components/sections/SkillsSection';
-import { ExperienceSection } from '@/components/sections/ExperienceSection';
-import { ProjectsSection } from '@/components/sections/ProjectsSection';
-import { ContactSection } from '@/components/sections/ContactSection';
+import { SmoothScroll } from '@/components/layout/SmoothScroll';
+import { CanvasLayout } from '@/components/layout/CanvasLayout';
+import { CustomCursor } from '@/components/ui/CustomCursor';
+import { Hero3D } from '@/components/features/Hero/Hero3D';
+import { HeroContent } from '@/components/features/Hero/HeroContent';
+import { WorkSection } from '@/components/features/Work/WorkSection';
+import { AboutSection } from '@/components/features/About/AboutSection';
+import { SkillsCloud } from '@/components/features/About/SkillsCloud';
+import { ContactSection } from '@/components/features/Contact/ContactSection';
+import { useThree } from '@react-three/fiber';
 
-import siteContent from '@/data/content.json';
-import servicesData from '@/data/services.json';
-import projectsData from '@/data/projects.json';
-import skillsData from '@/data/skills.json';
-import statsData from '@/data/stats.json';
-import experienceData from '@/data/experience.json';
+import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
 
-import type {
-  SiteContent,
-  ServicesData,
-  ProjectsData,
-  SkillsData,
-  StatsData,
-  ExperienceData,
-} from '@/types';
-
-const content = siteContent as SiteContent;
-const { services } = servicesData as ServicesData;
-const { projects } = projectsData as ProjectsData;
-const { skillCategories } = skillsData as SkillsData;
-const { statistics } = statsData as StatsData;
-const { certifications } = experienceData as ExperienceData;
+const Scene = () => {
+  const { height } = useThree((state) => state.viewport);
+  return (
+    <ErrorBoundary fallback={null}>
+      <Hero3D />
+      <WorkSection />
+      <group position={[0, -height * 2, 0]}>
+        <SkillsCloud />
+      </group>
+      <ambientLight intensity={0.5} />
+    </ErrorBoundary>
+  );
+};
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Header navigation={content.navigation} logo={content.site.title} />
+    <SmoothScroll>
+      <CustomCursor />
+      <div className="relative w-full min-h-screen bg-[#030303] text-white">
+        <CanvasLayout>
+          <Scene />
+        </CanvasLayout>
 
-      <main>
-        <HeroSection content={content.hero} />
-        <AboutSection content={content.about} />
-        <StatsSection statistics={statistics} />
-        <ServicesSection services={services} />
-        <SkillsSection skillCategories={skillCategories} />
-        <ExperienceSection certifications={certifications} />
-        <ProjectsSection projects={projects} />
-        <ContactSection content={content.contact} />
-      </main>
-
-      <Footer copyright={content.site.copyright} />
-    </div>
+        {/* HTML Content Layer */}
+        <main className="relative z-10">
+          <HeroContent />
+          <div className="h-screen"></div> {/* Spacer for Work Section scroll */}
+          <AboutSection />
+          <ContactSection />
+        </main>
+      </div>
+    </SmoothScroll>
   );
 }
 

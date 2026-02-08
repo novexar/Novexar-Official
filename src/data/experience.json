@@ -13,7 +13,14 @@
         "Document Intelligenceによる自動文書処理システムで月間1000時間の作業時間削減",
         "マルチテナントSaaSアーキテクチャの設計・実装"
       ],
-      "technologies": ["Azure", "OpenAI", "Python", "FastAPI", "React", "TypeScript"]
+      "technologies": [
+        "Azure",
+        "OpenAI",
+        "Python",
+        "FastAPI",
+        "React",
+        "TypeScript"
+      ]
     },
     {
       "id": "previous-1",
@@ -28,7 +35,14 @@
         "レガシーシステムのモダン化プロジェクトをリード",
         "CI/CDパイプラインの構築により、デプロイ時間を70%削減"
       ],
-      "technologies": ["React", "Angular", "Vue.js", "Node.js", "Python", "Azure DevOps"]
+      "technologies": [
+        "React",
+        "Angular",
+        "Vue.js",
+        "Node.js",
+        "Python",
+        "Azure DevOps"
+      ]
     },
     {
       "id": "previous-2",
@@ -43,21 +57,43 @@
         "コードレビュー文化の確立に貢献",
         "新人研修プログラムの作成・実施"
       ],
-      "technologies": ["JavaScript", "TypeScript", "HTML/CSS", "Git", "Docker"]
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "HTML/CSS",
+        "Git",
+        "Docker"
+      ]
     }
   ],
   "certifications": [
     {
-      "id": "az-900",
-      "name": "Microsoft Certified: Azure Fundamentals",
+      "id": "cert-azure-solutions-architect",
+      "name": "Azure Solutions Architect Expert",
       "issuer": "Microsoft",
-      "date": "2022"
+      "date": "2023",
+      "icon": "Award"
     },
     {
-      "id": "az-203",
-      "name": "Microsoft Certified: Azure Developer Associate (AZ-203)",
+      "id": "cert-azure-developer",
+      "name": "Azure Developer Associate",
       "issuer": "Microsoft",
-      "date": "2023"
+      "date": "2022",
+      "icon": "Code"
+    },
+    {
+      "id": "cert-kubernetes-admin",
+      "name": "Certified Kubernetes Administrator",
+      "issuer": "CNCF",
+      "date": "2022",
+      "icon": "Server"
+    },
+    {
+      "id": "cert-terraform-associate",
+      "name": "HashiCorp Certified: Terraform Associate",
+      "issuer": "HashiCorp",
+      "date": "2021",
+      "icon": "Cloud"
     }
   ]
 }

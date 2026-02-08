@@ -3,6 +3,8 @@ import { Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { AboutContent } from '@/types';
 
+
+
 interface AboutSectionProps {
   content: AboutContent;
 }
@@ -36,9 +38,9 @@ export function AboutSection({ content }: AboutSectionProps) {
             </div>
           </div>
 
-          {/* Content */}
-          <div className="text-center mb-12">
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-left space-y-6 text-lg text-muted-foreground leading-relaxed">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -63,31 +65,34 @@ export function AboutSection({ content }: AboutSectionProps) {
               >
                 {t('about.paragraph3')}
               </motion.p>
-            </div>
-          </div>
 
-          {/* Role Tags */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-3"
-          >
-            {roles.map((role, index) => (
+              {/* Role Tags */}
               <motion.div
-                key={role}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 backdrop-blur-sm"
+                className="flex flex-wrap gap-3 pt-6"
               >
-                <span className="font-semibold text-foreground">{role}</span>
+                {roles.map((role, index) => (
+                  <motion.div
+                    key={role}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                    className="px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 backdrop-blur-sm"
+                  >
+                    <span className="font-semibold text-foreground">{role}</span>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </div>
+
+            {/* 3D Skills Galaxy Placeholder - Rendered in Global Experience */}
+            <div className="h-[400px] w-full relative" />
+          </div>
         </motion.div>
       </div>
     </section>

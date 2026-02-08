@@ -1,19 +1,32 @@
 {
   "statistics": [
     {
-      "id": "experience",
+      "id": "years-experience",
       "value": "5+",
-      "icon": "Calendar"
+      "label": "Years Experience",
+      "description": "Working with modern web technologies",
+      "icon": "Clock"
     },
     {
-      "id": "projects",
+      "id": "projects-completed",
       "value": "50+",
-      "icon": "FolderKanban"
+      "label": "Projects Completed",
+      "description": "Successful deliveries for global clients",
+      "icon": "CheckCircle"
     },
     {
-      "id": "technologies",
-      "value": "20+",
-      "icon": "Code"
+      "id": "happy-clients",
+      "value": "30+",
+      "label": "Happy Clients",
+      "description": "Across various industries",
+      "icon": "Users"
+    },
+    {
+      "id": "coffee-consumed",
+      "value": "∞",
+      "label": "Coffee Consumed",
+      "description": "Fueling the creative process",
+      "icon": "Coffee"
     }
   ]
 }

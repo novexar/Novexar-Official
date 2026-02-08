@@ -7,11 +7,14 @@ interface ContactSectionProps {
   content: ContactContent;
 }
 
+
+
 export function ContactSection({ content }: ContactSectionProps) {
   const { t } = useTranslation();
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-t from-black to-blue-900/20">
+    <section id="contact" className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
