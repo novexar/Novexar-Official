@@ -27,7 +27,7 @@ git push origin main
 
 1. リポジトリの **Actions** タブでワークフローの実行状況を確認できます
 2. デプロイが完了すると、以下のURLでサイトにアクセスできます：
-   - `https://poxcondev.github.io/POXCON-Official/`
+   - `https://novexar.github.io/Novexar-Official/`
 
 ## トラブルシューティング
 

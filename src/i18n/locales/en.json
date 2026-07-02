@@ -1,94 +1,53 @@
 {
-  "site": {
-    "title": "POXCON",
-    "description": "Azure & AI Consultant | Full Stack Engineer | Cloud Solutions Architect",
-    "copyright": "© 2024 POXCON. All rights reserved."
+  "meta": {
+    "copyright": "© 2026 Novexar"
   },
   "nav": {
-    "home": "Home",
-    "about": "About Me",
-    "aboutMe": "About Me",
-    "services": "Services",
+    "about": "About",
+    "works": "Works",
     "skills": "Skills",
-    "experience": "Experience",
-    "projects": "Projects",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Developing New Projects",
-    "title1": "Clean Code.",
-    "title2": "Scalable Apps.",
-    "title3": "Reliable Delivery.",
-    "description": "Azure & AI Consultant | Full Stack Engineer specializing in cloud-native solutions and intelligent applications",
-    "scrollText": "Scroll to explore"
+    "role1": "Microsoft Azure AI Consultant",
+    "role2": "AI & Software Developer",
+    "location": "Based in Japan",
+    "scroll": "Scroll",
+    "keywords": "Cloud Native / Generative AI / Full-Stack"
   },
   "about": {
-    "badge": "About Me",
-    "title": "About Me",
-    "paragraph1": "I am an Azure & AI consultant and engineer with a passion for building scalable cloud solutions and intelligent applications. With expertise in cloud architecture and AI integration, I help businesses transform their digital presence.",
-    "paragraph2": "My approach combines technical excellence with business understanding, ensuring that every solution not only works flawlessly but also delivers measurable value. I specialize in Azure cloud services, full-stack development, and cutting-edge AI technologies.",
-    "paragraph3": "Whether it's architecting complex cloud infrastructures, developing intelligent chatbots, or creating seamless user experiences, I bring dedication and expertise to every project.",
-    "developer": "Developer",
-    "engineer": "Engineer",
-    "consultant": "Consultant",
-    "architect": "Architect"
+    "label": "About",
+    "p1": "I build user-friendly applications across the stack — from front-end (TypeScript, React, Angular, Vue) to back-end (Python, FastAPI).",
+    "p2": "Leveraging Azure services such as OpenAI, Document Intelligence, SQL Server, Storage Account and Entra ID, I also provide consulting on infrastructure, architecture design, and AI/IoT solutions.",
+    "p3": "My goal is to deliver value from both the technical and the business side.",
+    "certs": "Certifications"
   },
-  "stats": {
-    "title": "By the Numbers",
-    "experience": {
-      "label": "Years Experience",
-      "value": "5"
-    },
-    "projects": {
-      "label": "Projects Completed",
-      "value": "50"
-    },
-    "technologies": {
-      "label": "Technologies",
-      "value": "20"
-    }
-  },
-  "services": {
-    "title": "Services",
-    "description": "What I can do for you",
-    "azure-architecture": {
-      "title": "Azure Architecture & Consulting",
-      "description": "Cloud infrastructure design and implementation"
-    },
-    "fullstack-development": {
-      "title": "Full Stack Development",
-      "description": "End-to-end application development"
-    },
-    "cognitive-services": {
-      "title": "AI & Cognitive Services",
-      "description": "Intelligent application development"
+  "works": {
+    "label": "Selected Works",
+    "sub": "Personal and POXCON organization projects on GitHub",
+    "viewAll": "View all on GitHub",
+    "private": "Private",
+    "items": {
+      "numeriq": "AI-driven business diagnostics SaaS package",
+      "fine-group-solution": "Corporate solution platform built under the POXCON organization",
+      "partnercare": "Partner health management application",
+      "kabu-trade-auto": "Automated Japanese stock trading engine",
+      "miharashi-official": "Official website for the Miharashi drive-in",
+      "invoice-search": "Invoice consistency checker powered by Japan's NTA API",
+      "multiple-ai-chatbot": "Chat with multiple AI models side by side",
+      "steam-dedicated-server-client": "Desktop client for building and managing Steam dedicated servers"
     }
   },
   "skills": {
-    "title": "Skills & Technologies",
-    "description": "My technical expertise"
-  },
-  "experience": {
-    "title": "Certifications",
-    "description": "Professional credentials",
-    "certifications": {
-      "title": "Microsoft Azure Certifications"
-    }
-  },
-  "projects": {
-    "title": "Projects",
-    "description": "Featured work and case studies",
-    "viewOnGithub": "View Project on GitHub"
+    "label": "Stack",
+    "sub": "Technologies I work with"
   },
   "contact": {
-    "title": "Get in Touch",
-    "description": "Let's discuss your project",
-    "github": "View on GitHub",
-    "email": "Email Me",
-    "contactMe": "Contact Me"
-  },
-  "buttons": {
-    "contactMe": "Contact Me",
-    "startProject": "Start your project"
+    "label": "Contact",
+    "title": "Let's Talk",
+    "sub": "Feel free to reach out about your project",
+    "github": "GitHub — Novexar",
+    "org": "GitHub — POXCON Org",
+    "top": "Back to top"
   }
 }

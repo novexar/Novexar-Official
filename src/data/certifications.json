@@ -1,0 +1,28 @@
+{
+  "certifications": [
+    {
+      "id": "az-900",
+      "name": "Azure Fundamentals",
+      "issuer": "Microsoft",
+      "code": "AZ-900"
+    },
+    {
+      "id": "az-203",
+      "name": "Azure Developer Associate",
+      "issuer": "Microsoft",
+      "code": "AZ-203"
+    },
+    {
+      "id": "ai-900",
+      "name": "Azure AI Fundamentals",
+      "issuer": "Microsoft",
+      "code": "AI-900"
+    },
+    {
+      "id": "lfc131",
+      "name": "Green Software for Practitioners",
+      "issuer": "The Linux Foundation",
+      "code": "LFC131"
+    }
+  ]
+}
