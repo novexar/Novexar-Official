@@ -108,10 +108,8 @@ npm run preview
 
 ### デプロイ
 
-```bash
-# GitHub Pagesへデプロイ
-npm run deploy
-```
+mainブランチへのpush時にGitHub Actionsが自動でGitHub Pagesへデプロイします。
+詳細は [.github/DEPLOYMENT.md](.github/DEPLOYMENT.md) を参照してください。
 
 ## コンテンツの更新
 
