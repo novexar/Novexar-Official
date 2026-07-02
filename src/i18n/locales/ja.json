@@ -1,94 +1,53 @@
 {
-  "site": {
-    "title": "POXCON",
-    "description": "Azure & AI コンサルタント | フルスタックエンジニア | クラウドソリューションアーキテクト",
-    "copyright": "© 2024 POXCON. All rights reserved."
+  "meta": {
+    "copyright": "© 2026 Novexar"
   },
   "nav": {
-    "home": "ホーム",
-    "about": "自己紹介",
-    "aboutMe": "自己紹介",
-    "services": "サービス",
-    "skills": "スキル",
-    "experience": "経歴",
-    "projects": "プロジェクト",
-    "contact": "お問い合わせ"
+    "about": "About",
+    "works": "Works",
+    "skills": "Skills",
+    "contact": "Contact"
   },
   "hero": {
-    "badge": "新規プロジェクト開発中",
-    "title1": "クリーンなコード。",
-    "title2": "スケーラブルなアプリ。",
-    "title3": "確実なデリバリー。",
-    "description": "Azure & AI コンサルタント | クラウドネイティブソリューションとインテリジェントアプリケーションを専門とするフルスタックエンジニア",
-    "scrollText": "スクロールして詳細を見る"
+    "role1": "Microsoft Azure AI コンサルタント",
+    "role2": "AI & ソフトウェア開発者",
+    "location": "日本を拠点に活動",
+    "scroll": "Scroll",
+    "keywords": "クラウド / 生成AI / フルスタック"
   },
   "about": {
-    "badge": "自己紹介",
-    "title": "自己紹介",
-    "paragraph1": "私はAzure & AIコンサルタント兼エンジニアとして、スケーラブルなクラウドソリューションとインテリジェントアプリケーションの構築に情熱を注いでいます。クラウドアーキテクチャとAI統合の専門知識を活かし、企業のデジタルプレゼンスの変革を支援しています。",
-    "paragraph2": "技術的な卓越性とビジネス理解を組み合わせたアプローチで、すべてのソリューションが完璧に機能するだけでなく、測定可能な価値を提供することを保証します。Azureクラウドサービス、フルスタック開発、最先端のAI技術を専門としています。",
-    "paragraph3": "複雑なクラウドインフラの設計、インテリジェントチャットボットの開発、シームレスなユーザー体験の創造など、すべてのプロジェクトに献身と専門知識をもたらします。",
-    "developer": "デベロッパー",
-    "engineer": "エンジニア",
-    "consultant": "コンサルタント",
-    "architect": "アーキテクト"
+    "label": "About",
+    "p1": "FrontEnd(TypeScript, React, Angular, Vue など)からBackEnd(Python, FastAPI など)まで幅広い技術で、ユーザーフレンドリーなアプリケーションを開発しています。",
+    "p2": "Azureの各種サービス(OpenAI, Document Intelligence, SQL Server, Storage Account, Entra ID など)を駆使し、環境構築やアーキテクチャ設計、AIやIoTを活用したコンサルティングも行っています。",
+    "p3": "技術とビジネスの両面から価値を提供し、サポートすることを目指しています。",
+    "certs": "保有資格"
   },
-  "stats": {
-    "title": "数字で見る実績",
-    "experience": {
-      "label": "年の経験",
-      "value": "5"
-    },
-    "projects": {
-      "label": "完了プロジェクト",
-      "value": "50"
-    },
-    "technologies": {
-      "label": "技術スタック",
-      "value": "20"
-    }
-  },
-  "services": {
-    "title": "サービス",
-    "description": "提供できること",
-    "azure-architecture": {
-      "title": "Azureアーキテクチャ＆コンサルティング",
-      "description": "クラウドインフラの設計と実装"
-    },
-    "fullstack-development": {
-      "title": "フルスタック開発",
-      "description": "エンドツーエンドのアプリケーション開発"
-    },
-    "cognitive-services": {
-      "title": "AI & コグニティブサービス",
-      "description": "インテリジェントアプリケーション開発"
+  "works": {
+    "label": "Selected Works",
+    "sub": "個人および POXCON Organization の GitHub プロジェクト",
+    "viewAll": "GitHubですべて見る",
+    "private": "非公開",
+    "items": {
+      "numeriq": "AIによる経営診断SaaSパッケージ",
+      "fine-group-solution": "POXCON Organizationとして開発したコーポレートソリューション",
+      "partnercare": "パートナーの健康管理アプリケーション",
+      "kabu-trade-auto": "国内株式の自動売買システム",
+      "miharashi-official": "見晴らしドライブイン公式ホームページ",
+      "invoice-search": "国税庁APIを用いたインボイス整合性チェッカー",
+      "multiple-ai-chatbot": "複数のAIモデルと同時に対話できるチャットボット",
+      "steam-dedicated-server-client": "Steam専用サーバーの構築・管理クライアント"
     }
   },
   "skills": {
-    "title": "スキル & 技術",
-    "description": "技術的専門知識"
-  },
-  "experience": {
-    "title": "資格",
-    "description": "専門資格",
-    "certifications": {
-      "title": "Microsoft Azure 資格"
-    }
-  },
-  "projects": {
-    "title": "プロジェクト",
-    "description": "これまでに手がけた主なプロジェクト",
-    "viewOnGithub": "GitHubでプロジェクトを見る"
+    "label": "Stack",
+    "sub": "扱える技術"
   },
   "contact": {
-    "title": "お問い合わせ",
-    "description": "プロジェクトについて話しましょう",
-    "github": "GitHubで見る",
-    "email": "メールを送る",
-    "contactMe": "お問い合わせ"
-  },
-  "buttons": {
-    "contactMe": "お問い合わせ",
-    "startProject": "プロジェクトを始める"
+    "label": "Contact",
+    "title": "Let's Talk",
+    "sub": "プロジェクトのご相談はお気軽に",
+    "github": "GitHub — Novexar",
+    "org": "GitHub — POXCON Org",
+    "top": "Back to top"
   }
 }
