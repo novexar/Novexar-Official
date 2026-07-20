@@ -5,6 +5,7 @@
   "nav": {
     "about": "About",
     "works": "Works",
+    "product": "Product",
     "skills": "Skills",
     "contact": "Contact"
   },
@@ -36,6 +37,36 @@
       "invoice-search": "国税庁APIを用いたインボイス整合性チェッカー",
       "multiple-ai-chatbot": "複数のAIモデルと同時に対話できるチャットボット",
       "steam-dedicated-server-client": "Steam専用サーバーの構築・管理クライアント"
+    }
+  },
+  "product": {
+    "label": "Product",
+    "name": "Steam Server Manager",
+    "tagline": "Steam専用サーバーの構築・運用をGUIで完結",
+    "desc": "Steam Dedicated Server(専用サーバー)の検索・導入・設定・起動管理をGUIで完結させる Windows / Linux 向けデスクトップアプリです。SteamCMDのCLI操作や設定ファイルの手編集なしに、「検索して、落として、設定して、起動する」を誰でも行えます。",
+    "platforms": "Windows 10/11 (x64) / Linux (x64)",
+    "oneTime": "買い切り",
+    "download": "無料でダウンロード",
+    "buy": "Proを購入",
+    "buySoon": "Pro 販売準備中",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "features": {
+          "search": "サーバーの検索・導入・設定・起動管理",
+          "update": "アプリの自動アップデート",
+          "single": "サーバー1台まで登録可能"
+        }
+      },
+      "pro": {
+        "name": "Pro",
+        "features": {
+          "multi": "複数サーバーの登録",
+          "mods": "Mod管理",
+          "backup": "自動バックアップ",
+          "seats": "3台までライセンス認証可能"
+        }
+      }
     }
   },
   "skills": {

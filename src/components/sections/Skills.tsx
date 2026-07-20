@@ -21,7 +21,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="px-6 md:px-10 py-28 md:py-40">
       <SectionHeading
-        index="03"
+        index="04"
         label={t('skills.label')}
         count={`/${String(totalSkills).padStart(2, '0')}`}
       />

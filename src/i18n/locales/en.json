@@ -5,6 +5,7 @@
   "nav": {
     "about": "About",
     "works": "Works",
+    "product": "Product",
     "skills": "Skills",
     "contact": "Contact"
   },
@@ -36,6 +37,36 @@
       "invoice-search": "Invoice consistency checker powered by Japan's NTA API",
       "multiple-ai-chatbot": "Chat with multiple AI models side by side",
       "steam-dedicated-server-client": "Desktop client for building and managing Steam dedicated servers"
+    }
+  },
+  "product": {
+    "label": "Product",
+    "name": "Steam Server Manager",
+    "tagline": "Steam dedicated servers, managed entirely through a GUI",
+    "desc": "A desktop app for Windows and Linux that lets you search, install, configure and run Steam dedicated servers — all from a GUI. No SteamCMD command-line work, no hand-editing config files: anyone can search, download, configure and launch.",
+    "platforms": "Windows 10/11 (x64) / Linux (x64)",
+    "oneTime": "One-time",
+    "download": "Download free",
+    "buy": "Get Pro",
+    "buySoon": "Pro coming soon",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "features": {
+          "search": "Search, install, configure and run servers",
+          "update": "Automatic app updates",
+          "single": "Register up to 1 server"
+        }
+      },
+      "pro": {
+        "name": "Pro",
+        "features": {
+          "multi": "Register multiple servers",
+          "mods": "Mod management",
+          "backup": "Automatic backups",
+          "seats": "License activation on up to 3 devices"
+        }
+      }
     }
   },
   "skills": {

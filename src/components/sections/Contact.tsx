@@ -17,7 +17,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="px-6 md:px-10 pt-28 md:pt-40 pb-8">
-      <SectionHeading index="04" label={t('contact.label')} />
+      <SectionHeading index="05" label={t('contact.label')} />
 
       <div className="py-20 md:py-32">
         <motion.p

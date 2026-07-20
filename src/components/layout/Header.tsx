@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 const NAV_ITEMS = [
   { id: 'about', href: '#about' },
   { id: 'works', href: '#works' },
+  { id: 'product', href: '#product' },
   { id: 'skills', href: '#skills' },
   { id: 'contact', href: '#contact' },
 ] as const;
