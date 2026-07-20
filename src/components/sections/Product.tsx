@@ -4,7 +4,8 @@ import { ArrowUpRight, Check, Download } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
 // Lemon Squeezy のチェックアウトURL。空文字の間は購入ボタンを「準備中」表示にする
-const PURCHASE_URL: string = '';
+const PURCHASE_URL: string =
+  'https://novexar.lemonsqueezy.com/checkout/buy/512b1cf4-7162-4836-ae82-509f3c4859af';
 const DOWNLOAD_URL =
   'https://github.com/novexar/steam-server-manager-releases/releases/latest';
 
