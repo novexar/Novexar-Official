@@ -1,11 +1,21 @@
-import { SyntheticEvent } from 'react';
-import { motion } from 'framer-motion';
+import type { SyntheticEvent } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { Reveal } from '@/components/ui/Reveal';
+import { containerClass, sectionTitleClass } from '@/components/ui/layout';
 import skillsData from '@/data/skills.json';
 
-const formatIndex = (index: number): string =>
-  String(index + 1).padStart(2, '0');
+/**
+ * 5 カテゴリを 2 + 3 のベントに並べる（6 列グリッド）。
+ * 上段 2 セルは幅広、うち 1 つと下段 1 つに色味を付けて単調さを避ける。
+ * カテゴリ数が増えた場合は最後の定義を繰り返す。
+ */
+const CELL_STYLES = [
+  'md:col-span-3 bg-[radial-gradient(110%_100%_at_100%_0%,rgb(var(--accent)/0.18),transparent_60%)] bg-surface',
+  'md:col-span-3 bg-surface',
+  'md:col-span-2 bg-surface',
+  'md:col-span-2 bg-raised',
+  'md:col-span-2 bg-surface',
+] as const;
 
 const hideBrokenIcon = (e: SyntheticEvent<HTMLImageElement>) => {
   e.currentTarget.style.display = 'none';
@@ -13,64 +23,49 @@ const hideBrokenIcon = (e: SyntheticEvent<HTMLImageElement>) => {
 
 export const Skills = () => {
   const { t } = useTranslation();
-  const totalSkills = skillsData.skillCategories.reduce(
-    (sum, category) => sum + category.skills.length,
-    0
-  );
 
   return (
-    <section id="skills" className="px-6 md:px-10 py-28 md:py-40">
-      <SectionHeading
-        index="04"
-        label={t('skills.label')}
-        count={`/${String(totalSkills).padStart(2, '0')}`}
-      />
+    <section id="skills" className="py-24 md:py-36">
+      <div className={containerClass}>
+        <Reveal>
+          <h2 className={sectionTitleClass}>{t('skills.label')}</h2>
+          <p className="mt-4 text-mute">{t('skills.sub')}</p>
+        </Reveal>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.1 }}
-        className="mt-10 md:mt-14 font-serif italic text-2xl md:text-4xl text-ink/90"
-      >
-        {t('skills.sub')}
-      </motion.p>
-
-      <div className="mt-14 md:mt-20 border-t border-line">
-        {skillsData.skillCategories.map((category, index) => (
-          <motion.div
-            key={category.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6, delay: (index % 3) * 0.08 }}
-            className="grid md:grid-cols-[16rem_1fr] gap-4 md:gap-8 border-b border-line py-8 md:py-10"
-          >
-            <h3 className="flex items-baseline gap-4 font-mono text-xs uppercase tracking-[0.3em] text-mute md:pt-2.5">
-              <span className="text-mute/60">{formatIndex(index)}</span>
-              {category.title}
-            </h3>
-
-            <div className="flex flex-wrap gap-2.5 md:gap-3">
-              {category.skills.map((skill) => (
-                <span
-                  key={skill.name}
-                  title={skill.description}
-                  className="inline-flex items-center gap-2.5 rounded-full border border-line bg-ink/[0.02] px-4 py-2 text-sm text-mute hover:border-accent/40 hover:text-ink hover:bg-ink/[0.05] transition-colors"
-                >
-                  <img
-                    src={skill.icon}
-                    alt=""
-                    className="h-4 w-4"
-                    loading="lazy"
-                    onError={hideBrokenIcon}
-                  />
-                  {skill.name}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+        <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-6">
+          {skillsData.skillCategories.map((category, index) => (
+            <Reveal
+              key={category.id}
+              delay={(index % 3) * 0.08}
+              className={`rounded-2xl border border-line p-6 md:p-8 ${
+                CELL_STYLES[Math.min(index, CELL_STYLES.length - 1)]
+              }`}
+            >
+              <h3 className="text-lg font-medium tracking-tight text-ink">
+                {category.title}
+              </h3>
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <li
+                    key={skill.name}
+                    className="inline-flex items-center gap-2 rounded-full border border-line bg-night/40 px-3.5 py-1.5 text-sm text-ink/90"
+                  >
+                    <img
+                      src={skill.icon}
+                      alt=""
+                      width={16}
+                      height={16}
+                      className="h-4 w-4"
+                      loading="lazy"
+                      onError={hideBrokenIcon}
+                    />
+                    {skill.name}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

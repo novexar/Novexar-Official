@@ -1,81 +1,62 @@
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { MapPinIcon } from '@phosphor-icons/react';
+import { Reveal } from '@/components/ui/Reveal';
+import {
+  containerClass,
+  sectionTitleClass,
+  tileClass,
+} from '@/components/ui/layout';
 import certificationsData from '@/data/certifications.json';
-
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-60px' },
-} as const;
 
 export const About = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="about" className="px-6 md:px-10 py-28 md:py-40">
-      <SectionHeading index="01" label={t('about.label')} />
-
-      <div className="mt-12 md:mt-16 grid md:grid-cols-[16rem_1fr] gap-10 md:gap-16">
-        {/* Sticky label column (desktop) */}
-        <div className="hidden md:block">
-          <span className="sticky top-32 font-serif italic text-3xl text-mute/70">
-            {t('about.label')}
-          </span>
+    <section id="about" className="py-24 md:py-36">
+      <div
+        className={`${containerClass} grid gap-16 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-24`}
+      >
+        <div>
+          <Reveal>
+            <h2 className={sectionTitleClass}>{t('nav.about')}</h2>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <p className="mt-10 text-xl leading-relaxed text-ink md:text-2xl md:leading-relaxed">
+              {t('about.p1')}
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-8 max-w-[65ch] leading-relaxed text-mute md:text-lg md:leading-relaxed">
+              {t('about.p2')}
+            </p>
+            <p className="mt-5 max-w-[65ch] leading-relaxed text-mute md:text-lg md:leading-relaxed">
+              {t('about.p3')}
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="mt-10 inline-flex items-center gap-2 text-sm text-mute">
+              <MapPinIcon className="h-4 w-4" />
+              {t('about.location')}
+            </p>
+          </Reveal>
         </div>
 
-        <div className="max-w-3xl">
-          <motion.p
-            {...fadeUp}
-            transition={{ duration: 0.7 }}
-            className="text-xl md:text-3xl leading-relaxed md:leading-relaxed text-ink font-light"
-          >
-            {t('about.p1')}
-          </motion.p>
-          <motion.p
-            {...fadeUp}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-8 text-base md:text-lg leading-relaxed text-mute"
-          >
-            {t('about.p2')}
-          </motion.p>
-          <motion.p
-            {...fadeUp}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-6 text-base md:text-lg leading-relaxed text-mute"
-          >
-            {t('about.p3')}
-          </motion.p>
-
-          {/* Certifications */}
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-20"
-          >
-            <span className="font-mono text-[0.65rem] md:text-xs uppercase tracking-[0.35em] text-mute">
-              {t('about.certs')}
-            </span>
-            <ul className="mt-6 border-t border-line">
-              {certificationsData.certifications.map((cert) => (
-                <li
-                  key={cert.id}
-                  className="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_minmax(0,14rem)_6rem] items-baseline gap-4 border-b border-line py-4"
-                >
-                  <span className="text-sm md:text-base text-ink">
-                    {cert.name}
-                  </span>
-                  <span className="hidden md:block text-sm text-mute">
-                    {cert.issuer}
-                  </span>
-                  <span className="font-mono text-xs text-mute text-right">
-                    {cert.code}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
+        <Reveal delay={0.1} className="lg:pt-2">
+          <h3 className="text-lg font-medium text-ink">{t('about.certs')}</h3>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            {certificationsData.certifications.map((cert) => (
+              <li key={cert.id} className={`${tileClass} p-5`}>
+                <span className="font-mono text-sm text-accent">
+                  {cert.code}
+                </span>
+                <p className="mt-6 font-medium leading-snug text-ink">
+                  {cert.name}
+                </p>
+                <p className="mt-1 text-sm text-mute">{cert.issuer}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

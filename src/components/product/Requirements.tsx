@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { Reveal } from '@/components/ui/Reveal';
+import { containerClass, sectionTitleClass } from '@/components/ui/layout';
 import type { Product } from '@/data/products';
 
 interface RequirementsProps {
@@ -12,29 +12,26 @@ export function Requirements({ product }: RequirementsProps) {
   const ns = `productPage.${product.i18nKey}`;
 
   return (
-    <section className="px-6 md:px-10 py-16 md:py-24">
-      <SectionHeading index="05" label={t('productPage.sections.requirements')} />
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.7 }}
-        className="mt-10 md:mt-14"
-      >
-        {product.requirementKeys.map((key) => (
-          <div
-            key={key}
-            className="grid md:grid-cols-[220px_1fr] gap-2 md:gap-6 border-b border-line py-5"
-          >
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-mute">
-              {t(`${ns}.requirements.${key}.label`)}
-            </span>
-            <span className="text-sm text-ink/80 leading-relaxed">
-              {t(`${ns}.requirements.${key}.value`)}
-            </span>
-          </div>
-        ))}
-      </motion.div>
+    <section className="py-16 md:py-24">
+      <div className={containerClass}>
+        <h2 className={sectionTitleClass}>
+          {t('productPage.sections.requirements')}
+        </h2>
+        <Reveal>
+          <dl className="mt-10 grid gap-x-10 gap-y-8 md:mt-14 md:grid-cols-3">
+            {product.requirementKeys.map((key) => (
+              <div key={key}>
+                <dt className="text-sm text-mute">
+                  {t(`${ns}.requirements.${key}.label`)}
+                </dt>
+                <dd className="mt-2 leading-relaxed text-ink">
+                  {t(`${ns}.requirements.${key}.value`)}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </div>
     </section>
   );
 }

@@ -7,21 +7,21 @@
     "works": "Works",
     "product": "Product",
     "skills": "Skills",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "メニュー",
+    "skip": "本文へスキップ",
+    "language": "言語を切り替え"
   },
   "hero": {
-    "role1": "Microsoft Azure AI コンサルタント",
-    "role2": "AI & ソフトウェア開発者",
-    "location": "日本を拠点に活動",
-    "scroll": "Scroll",
-    "keywords": "クラウド / 生成AI / フルスタック"
+    "lead": "Azure AIコンサルタント兼フルスタックエンジニア。クラウド設計からAIプロダクトの実装まで、一貫して手がけます。",
+    "cta": "制作実績を見る"
   },
   "about": {
-    "label": "About",
     "p1": "FrontEnd(TypeScript, React, Angular, Vue など)からBackEnd(Python, FastAPI など)まで幅広い技術で、ユーザーフレンドリーなアプリケーションを開発しています。",
     "p2": "Azureの各種サービス(OpenAI, Document Intelligence, SQL Server, Storage Account, Entra ID など)を駆使し、環境構築やアーキテクチャ設計、AIやIoTを活用したコンサルティングも行っています。",
     "p3": "技術とビジネスの両面から価値を提供し、サポートすることを目指しています。",
-    "certs": "保有資格"
+    "certs": "保有資格",
+    "location": "日本を拠点に活動"
   },
   "works": {
     "label": "Selected Works",
@@ -37,7 +37,8 @@
       "invoice-search": "国税庁APIを用いたインボイス整合性チェッカー",
       "multiple-ai-chatbot": "複数のAIモデルと同時に対話できるチャットボット",
       "steam-dedicated-server-client": "Steam専用サーバーの構築・管理クライアント"
-    }
+    },
+    "more": "その他のプロジェクト"
   },
   "product": {
     "label": "Product",
@@ -47,8 +48,12 @@
     "buySoon": "Pro 販売準備中",
     "viewDetails": "詳細を見る",
     "plans": {
-      "free": { "name": "Free" },
-      "pro": { "name": "Pro" }
+      "free": {
+        "name": "Free"
+      },
+      "pro": {
+        "name": "Pro"
+      }
     }
   },
   "productPage": {
@@ -68,10 +73,10 @@
       "desc": "Steam Dedicated Server(専用サーバー)の検索・導入・設定・起動管理をGUIで完結させる Windows / Linux 向けデスクトップアプリです。SteamCMDのCLI操作や設定ファイルの手編集なしに、「検索して、落として、設定して、起動する」を誰でも行えます。",
       "platforms": "Windows 10/11 (x64) / Linux (x64)",
       "screenshots": {
-        "dashboard": "ダッシュボード — 登録サーバーの一覧と稼働状態",
-        "search": "サーバー検索 — 対応タイトルの検索と導入",
-        "config": "設定エディタ — GUIでの設定編集",
-        "console": "コンソール — 起動ログのリアルタイム表示"
+        "dashboard": "ダッシュボード: 登録サーバーの一覧と稼働状態",
+        "search": "サーバー検索: 対応タイトルの検索と導入",
+        "config": "設定エディタ: GUIでの設定編集",
+        "console": "コンソール: 起動ログのリアルタイム表示"
       },
       "features": {
         "search": {
@@ -128,12 +133,27 @@
       "pricing": {
         "note": "Pro は買い切りライセンスです。サブスクリプションではありません。",
         "rows": {
-          "core": { "label": "サーバーの検索・導入・設定・起動管理" },
-          "update": { "label": "アプリの自動アップデート" },
-          "servers": { "label": "登録可能サーバー数", "free": "1台", "pro": "複数" },
-          "mods": { "label": "Mod管理" },
-          "backup": { "label": "自動バックアップ" },
-          "seats": { "label": "ライセンス認証台数", "pro": "3台まで" }
+          "core": {
+            "label": "サーバーの検索・導入・設定・起動管理"
+          },
+          "update": {
+            "label": "アプリの自動アップデート"
+          },
+          "servers": {
+            "label": "登録可能サーバー数",
+            "free": "1台",
+            "pro": "複数"
+          },
+          "mods": {
+            "label": "Mod管理"
+          },
+          "backup": {
+            "label": "自動バックアップ"
+          },
+          "seats": {
+            "label": "ライセンス認証台数",
+            "pro": "3台まで"
+          }
         }
       },
       "requirements": {
@@ -176,18 +196,18 @@
         "title": "Get Started",
         "sub": "まずはFreeで。気に入ったらProへ。"
       }
-    }
+    },
+    "included": "利用可",
+    "notIncluded": "対象外"
   },
   "skills": {
     "label": "Stack",
     "sub": "扱える技術"
   },
   "contact": {
-    "label": "Contact",
     "title": "Let's Talk",
     "sub": "プロジェクトのご相談はお気軽に",
-    "github": "GitHub — Novexar",
-    "org": "GitHub — POXCON Org",
-    "top": "Back to top"
+    "github": "GitHub (Novexar)",
+    "org": "GitHub (POXCON)"
   }
 }

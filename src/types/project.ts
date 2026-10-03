@@ -6,8 +6,6 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
-  icon?: string;
   /** 公開リポジトリのURL。privateプロジェクトでは未設定 */
   url?: string;
   /** owner/name 形式のリポジトリ識別子（表示用） */
@@ -18,6 +16,7 @@ export interface Project {
   org?: string;
   year?: string;
   tags?: string[];
+  /** true なら Works 上段のベントに大きく表示する */
   featured?: boolean;
   category?: string;
 }

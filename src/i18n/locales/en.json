@@ -7,21 +7,21 @@
     "works": "Works",
     "product": "Product",
     "skills": "Skills",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "skip": "Skip to content",
+    "language": "Switch language"
   },
   "hero": {
-    "role1": "Microsoft Azure AI Consultant",
-    "role2": "AI & Software Developer",
-    "location": "Based in Japan",
-    "scroll": "Scroll",
-    "keywords": "Cloud Native / Generative AI / Full-Stack"
+    "lead": "Azure AI consultant and full-stack developer. I design cloud architecture and build AI products from front end to back end.",
+    "cta": "View work"
   },
   "about": {
-    "label": "About",
-    "p1": "I build user-friendly applications across the stack — from front-end (TypeScript, React, Angular, Vue) to back-end (Python, FastAPI).",
+    "p1": "I build user-friendly applications across the stack, from front-end (TypeScript, React, Angular, Vue) to back-end (Python, FastAPI).",
     "p2": "Leveraging Azure services such as OpenAI, Document Intelligence, SQL Server, Storage Account and Entra ID, I also provide consulting on infrastructure, architecture design, and AI/IoT solutions.",
     "p3": "My goal is to deliver value from both the technical and the business side.",
-    "certs": "Certifications"
+    "certs": "Certifications",
+    "location": "Based in Japan"
   },
   "works": {
     "label": "Selected Works",
@@ -37,7 +37,8 @@
       "invoice-search": "Invoice consistency checker powered by Japan's NTA API",
       "multiple-ai-chatbot": "Chat with multiple AI models side by side",
       "steam-dedicated-server-client": "Desktop client for building and managing Steam dedicated servers"
-    }
+    },
+    "more": "More projects"
   },
   "product": {
     "label": "Product",
@@ -47,8 +48,12 @@
     "buySoon": "Pro coming soon",
     "viewDetails": "View details",
     "plans": {
-      "free": { "name": "Free" },
-      "pro": { "name": "Pro" }
+      "free": {
+        "name": "Free"
+      },
+      "pro": {
+        "name": "Pro"
+      }
     }
   },
   "productPage": {
@@ -65,13 +70,13 @@
     },
     "ssm": {
       "tagline": "Steam dedicated servers, managed entirely through a GUI",
-      "desc": "A desktop app for Windows and Linux that lets you search, install, configure and run Steam dedicated servers — all from a GUI. No SteamCMD command-line work, no hand-editing config files: anyone can search, download, configure and launch.",
+      "desc": "A desktop app for Windows and Linux that lets you search, install, configure and run Steam dedicated servers, all from a GUI. No SteamCMD command-line work, no hand-editing config files: anyone can search, download, configure and launch.",
       "platforms": "Windows 10/11 (x64) / Linux (x64)",
       "screenshots": {
-        "dashboard": "Dashboard — registered servers and their status",
-        "search": "Server search — find and install supported titles",
-        "config": "Config editor — edit settings through the GUI",
-        "console": "Console — real-time launch logs"
+        "dashboard": "Dashboard: registered servers and their status",
+        "search": "Server search: find and install supported titles",
+        "config": "Config editor: edit settings through the GUI",
+        "console": "Console: real-time launch logs"
       },
       "features": {
         "search": {
@@ -84,7 +89,7 @@
         },
         "config": {
           "title": "GUI Config Editor",
-          "desc": "Adjust server settings from the GUI — no hand-editing of config files."
+          "desc": "Adjust server settings from the GUI, with no hand-editing of config files."
         },
         "launch": {
           "title": "Launch & Stop Control",
@@ -114,7 +119,7 @@
         },
         "install": {
           "title": "Download",
-          "desc": "Install the server with one click — no SteamCMD involved."
+          "desc": "Install the server with one click. No SteamCMD involved."
         },
         "configure": {
           "title": "Configure",
@@ -128,12 +133,27 @@
       "pricing": {
         "note": "Pro is a one-time license. No subscription.",
         "rows": {
-          "core": { "label": "Search, install, configure and run servers" },
-          "update": { "label": "Automatic app updates" },
-          "servers": { "label": "Registered servers", "free": "1", "pro": "Multiple" },
-          "mods": { "label": "Mod management" },
-          "backup": { "label": "Automatic backups" },
-          "seats": { "label": "License activations", "pro": "Up to 3 devices" }
+          "core": {
+            "label": "Search, install, configure and run servers"
+          },
+          "update": {
+            "label": "Automatic app updates"
+          },
+          "servers": {
+            "label": "Registered servers",
+            "free": "1",
+            "pro": "Multiple"
+          },
+          "mods": {
+            "label": "Mod management"
+          },
+          "backup": {
+            "label": "Automatic backups"
+          },
+          "seats": {
+            "label": "License activations",
+            "pro": "Up to 3 devices"
+          }
         }
       },
       "requirements": {
@@ -157,7 +177,7 @@
         },
         "license": {
           "q": "Is Pro a one-time purchase?",
-          "a": "Yes. Pro costs ¥1,980 once — no monthly fees. One license can be activated on up to 3 devices."
+          "a": "Yes. Pro costs ¥1,980 once, with no monthly fees. One license can be activated on up to 3 devices."
         },
         "difference": {
           "q": "What is the difference between Free and Pro?",
@@ -176,18 +196,18 @@
         "title": "Get Started",
         "sub": "Start with Free. Upgrade to Pro when you love it."
       }
-    }
+    },
+    "included": "Included",
+    "notIncluded": "Not included"
   },
   "skills": {
     "label": "Stack",
     "sub": "Technologies I work with"
   },
   "contact": {
-    "label": "Contact",
     "title": "Let's Talk",
     "sub": "Feel free to reach out about your project",
-    "github": "GitHub — Novexar",
-    "org": "GitHub — POXCON Org",
-    "top": "Back to top"
+    "github": "Novexar on GitHub",
+    "org": "POXCON on GitHub"
   }
 }

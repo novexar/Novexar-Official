@@ -17,7 +17,7 @@ export function ProductDetail() {
   useEffect(() => {
     if (!product) return;
     const previousTitle = document.title;
-    document.title = `${product.name} — Novexar`;
+    document.title = `${product.name} | Novexar`;
     return () => {
       document.title = previousTitle;
     };

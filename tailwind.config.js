@@ -1,30 +1,35 @@
 /** @type {import('tailwindcss').Config} */
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['Inter', '"Noto Sans JP"', 'sans-serif'],
-      display: ['Archivo', '"Noto Sans JP"', 'sans-serif'],
-      serif: ['"Instrument Serif"', 'serif'],
-      mono: ['"JetBrains Mono"', 'monospace'],
+      sans: [
+        '"Geist Variable"',
+        '"Noto Sans JP Variable"',
+        'system-ui',
+        'sans-serif',
+      ],
+      mono: ['"Geist Mono Variable"', 'ui-monospace', 'monospace'],
     },
     extend: {
+      // 色は src/index.css の CSS 変数で定義（テーマ追加時はそちらを差し替える）
+      // 注意: "base" は text-base(font-size) と衝突するため使わないこと
       colors: {
-        // 注意: "base" は text-base(font-size) と衝突するため使わないこと
-        night: '#0B0B0C',
-        ink: '#ECEAE6',
-        mute: '#8F8C86',
-        line: 'rgba(236,234,230,0.14)',
-        accent: '#59B7FF',
+        night: token('night'),
+        surface: token('surface'),
+        raised: token('raised'),
+        ink: token('ink'),
+        mute: token('mute'),
+        accent: token('accent'),
+        line: 'rgb(var(--ink) / 0.1)',
       },
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
+      maxWidth: {
+        page: '80rem',
       },
-      animation: {
-        marquee: 'marquee 40s linear infinite',
+      transitionTimingFunction: {
+        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
     },
   },

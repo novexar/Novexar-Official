@@ -2,15 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * デザイントークン。ダーク固定だが、ライトテーマを足す場合は
+ * この変数群を [data-theme='light'] などで上書きすればよい。
+ *
+ * 形状ルール: ボタンとチップは pill / カードとタイルは rounded-2xl /
+ * カード内の画像は rounded-xl。これ以外の角丸は使わない。
+ *
+ * z-index: 40 = ヘッダー, 50 = スキップリンク, 60 = グレイン
+ */
 @layer base {
+  :root {
+    --night: 10 10 11;
+    --surface: 17 17 19;
+    --raised: 24 24 27;
+    --ink: 237 237 239;
+    --mute: 148 148 157;
+    --accent: 111 163 232;
+    color-scheme: dark;
+    /* 固定ヘッダー(64px)の下に見出しが隠れないようにする */
+    scroll-padding-top: 72px;
+  }
+
   body {
     @apply bg-night text-ink antialiased;
-    font-feature-settings: 'ss01', 'cv11';
   }
 
   ::selection {
-    background: #59b7ff;
-    color: #0b0b0c;
+    background: rgb(var(--accent));
+    color: rgb(var(--night));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* 日本語は文節単位で折り返す（対応ブラウザのみ。非対応なら通常の折り返し） */
+  :lang(ja) {
+    word-break: auto-phrase;
   }
 }
 
@@ -21,7 +61,7 @@
     inset: 0;
     z-index: 60;
     pointer-events: none;
-    opacity: 0.05;
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
@@ -43,8 +83,15 @@
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .link-underline:hover::after {
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
     transform: scaleX(1);
     transform-origin: left;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .link-underline::after {
+      transition: none;
+    }
   }
 }

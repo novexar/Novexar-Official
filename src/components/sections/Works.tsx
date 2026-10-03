@@ -1,149 +1,181 @@
-import { motion } from 'framer-motion';
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowUpRight, Lock } from 'lucide-react';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Project } from '@/types';
+import { ArrowUpRightIcon, LockSimpleIcon } from '@phosphor-icons/react';
+import { Reveal } from '@/components/ui/Reveal';
+import { containerClass, sectionTitleClass } from '@/components/ui/layout';
+import { GITHUB_PROFILE_URL } from '@/data/links';
+import type { Project } from '@/types';
 
 interface WorksProps {
   projects: Project[];
 }
 
-const formatIndex = (index: number): string =>
-  String(index + 1).padStart(2, '0');
+interface ProjectItemProps {
+  project: Project;
+}
 
-function WorkRow({ project, index }: { project: Project; index: number }) {
+/**
+ * ベント各セルの見た目。1 件目を大きく、背景は 3 種類に振り分けて単調さを避ける。
+ * 件数が変わっても破綻しないよう、範囲外は最後の要素を使う。
+ */
+const FEATURED_CELLS = [
+  {
+    span: 'lg:col-span-2 lg:row-span-2',
+    surface:
+      'bg-[radial-gradient(120%_90%_at_0%_0%,rgb(var(--accent)/0.22),transparent_60%)] bg-surface',
+    title: 'text-4xl md:text-6xl',
+  },
+  { span: '', surface: 'bg-raised', title: 'text-2xl md:text-3xl' },
+  { span: '', surface: 'bg-surface', title: 'text-2xl md:text-3xl' },
+] as const;
+
+function useProjectDescription(project: Project): string {
   const { t } = useTranslation();
-  const isLinked = Boolean(project.url);
-  const description = t(`works.items.${project.id}`, {
-    defaultValue: project.description,
-  });
+  return t(`works.items.${project.id}`, { defaultValue: project.description });
+}
 
-  const rowContent = (
-    <div className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[4rem_1fr_minmax(0,20rem)_6rem] items-baseline gap-4 md:gap-8 py-7 md:py-9">
-      <span className="font-mono text-xs md:text-sm text-mute/60 group-hover:text-accent transition-colors">
-        {formatIndex(index)}
-      </span>
+/** 公開リポジトリならリンク、非公開なら「非公開」表示 */
+function ProjectStatus({ project }: ProjectItemProps) {
+  const { t } = useTranslation();
 
-      <div className="min-w-0">
-        <h3 className="font-display text-2xl md:text-5xl font-bold uppercase tracking-tight text-ink/80 group-hover:text-ink group-hover:translate-x-2 md:group-hover:translate-x-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-          {project.title}
-        </h3>
-        <p className="mt-2 text-sm text-mute md:hidden">{description}</p>
-      </div>
-
-      <div className="hidden md:block min-w-0">
-        <p className="text-sm text-mute line-clamp-2">{description}</p>
-        {project.tags && (
-          <p className="mt-2 font-mono text-xs uppercase tracking-wider text-mute/60">
-            {project.tags.join(' · ')}
-          </p>
-        )}
-      </div>
-
-      <div className="flex items-center justify-end gap-3 font-mono text-xs text-mute">
-        {project.org && (
-          <span className="hidden md:inline rounded-full border border-line px-2.5 py-0.5 text-[0.6rem] uppercase tracking-widest text-accent">
-            {project.org}
-          </span>
-        )}
-        <span>{project.year}</span>
-        {isLinked ? (
-          <ArrowUpRight className="w-4 h-4 text-mute/60 group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-        ) : (
-          <span
-            className="inline-flex items-center gap-1 text-mute/60"
-            title={t('works.private')}
-          >
-            <Lock className="w-3.5 h-3.5" />
-            <span className="hidden md:inline text-[0.6rem] uppercase tracking-widest">
-              {t('works.private')}
-            </span>
-          </span>
-        )}
-      </div>
-    </div>
-  );
-
-  const rowClass =
-    'group block border-b border-line transition-colors hover:border-ink/30';
+  if (project.url) {
+    return (
+      <ArrowUpRightIcon
+        aria-hidden="true"
+        className="h-5 w-5 shrink-0 text-mute transition duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+      />
+    );
+  }
 
   return (
-    <motion.li
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, delay: (index % 4) * 0.08 }}
+    <span className="inline-flex shrink-0 items-center gap-1.5 text-xs text-mute">
+      <LockSimpleIcon aria-hidden="true" className="h-3.5 w-3.5" />
+      {t('works.private')}
+    </span>
+  );
+}
+
+/** url があれば外部リンク、なければ素の div で包む */
+function ProjectShell({
+  project,
+  className,
+  children,
+}: ProjectItemProps & { className: string; children: ReactNode }) {
+  if (!project.url) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
     >
-      {isLinked ? (
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={rowClass}
-          aria-label={`${project.title} — GitHub`}
-        >
-          {rowContent}
-        </a>
-      ) : (
-        <div className={rowClass}>{rowContent}</div>
-      )}
-    </motion.li>
+      {children}
+    </a>
+  );
+}
+
+function ProjectMeta({ project }: ProjectItemProps) {
+  const parts = [project.year, ...(project.tags ?? [])].filter(Boolean);
+  return <p className="font-mono text-xs text-mute">{parts.join(' / ')}</p>;
+}
+
+function FeaturedCard({ project, index }: ProjectItemProps & { index: number }) {
+  const description = useProjectDescription(project);
+  const cell = FEATURED_CELLS[Math.min(index, FEATURED_CELLS.length - 1)];
+
+  return (
+    <Reveal delay={index * 0.08} className={cell.span}>
+      <ProjectShell
+        project={project}
+        className={`group flex h-full min-h-[15rem] flex-col justify-between gap-10 rounded-2xl border border-line p-6 transition-colors duration-300 hover:border-ink/25 md:p-8 ${cell.surface}`}
+      >
+        <div className="flex items-start justify-between gap-4">
+          <ProjectMeta project={project} />
+          <ProjectStatus project={project} />
+        </div>
+        <div>
+          <h3
+            className={`font-semibold leading-none tracking-tighter text-ink ${cell.title}`}
+          >
+            {project.title}
+          </h3>
+          <p className="mt-3 max-w-[48ch] leading-relaxed text-mute">
+            {description}
+          </p>
+        </div>
+      </ProjectShell>
+    </Reveal>
+  );
+}
+
+function CompactItem({ project, index }: ProjectItemProps & { index: number }) {
+  const description = useProjectDescription(project);
+
+  return (
+    <Reveal delay={(index % 3) * 0.06}>
+      <ProjectShell project={project} className="group block">
+        <div className="flex items-start justify-between gap-4">
+          <h4 className="text-lg font-medium tracking-tight text-ink">
+            {project.title}
+          </h4>
+          <ProjectStatus project={project} />
+        </div>
+        <p className="mt-2 text-sm leading-relaxed text-mute">{description}</p>
+        <div className="mt-3">
+          <ProjectMeta project={project} />
+        </div>
+      </ProjectShell>
+    </Reveal>
   );
 }
 
 export function Works({ projects }: WorksProps) {
   const { t } = useTranslation();
+  const featured = projects.filter((project) => project.featured);
+  const rest = projects.filter((project) => !project.featured);
 
   return (
-    <section id="works" className="px-6 md:px-10 py-28 md:py-40">
-      <SectionHeading
-        index="02"
-        label={t('works.label')}
-        count={`/${String(projects.length).padStart(2, '0')}`}
-      />
+    <section id="works" className="py-24 md:py-36">
+      <div className={containerClass}>
+        <Reveal>
+          <h2 className={sectionTitleClass}>{t('works.label')}</h2>
+          <p className="mt-4 max-w-[65ch] text-mute">{t('works.sub')}</p>
+        </Reveal>
 
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-10 md:mt-14 font-display text-5xl md:text-8xl font-black uppercase tracking-[-0.03em] leading-none text-ink"
-      >
-        {t('works.label')}
-      </motion.h2>
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.15 }}
-        className="mt-4 font-mono text-xs uppercase tracking-[0.3em] text-mute"
-      >
-        {t('works.sub')}
-      </motion.p>
+        <div className="mt-12 grid gap-4 md:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+          {featured.map((project, index) => (
+            <FeaturedCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
 
-      <ul className="mt-14 md:mt-20 border-t border-line">
-        {projects.map((project, index) => (
-          <WorkRow key={project.id} project={project} index={index} />
-        ))}
-      </ul>
+        {rest.length > 0 && (
+          <>
+            <h3 className="mt-16 text-lg font-medium text-ink md:mt-20">
+              {t('works.more')}
+            </h3>
+            <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              {rest.map((project, index) => (
+                <CompactItem key={project.id} project={project} index={index} />
+              ))}
+            </div>
+          </>
+        )}
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="mt-10 flex justify-end"
-      >
-        <a
-          href="https://github.com/novexar"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link-underline inline-flex items-center gap-2 font-mono text-xs md:text-sm uppercase tracking-[0.25em] text-mute hover:text-ink transition-colors"
-        >
-          {t('works.viewAll')}
-          <ArrowUpRight className="w-4 h-4" />
-        </a>
-      </motion.div>
+        <div className="mt-14 md:mt-16">
+          <a
+            href={GITHUB_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline inline-flex items-center gap-2 text-sm text-ink"
+          >
+            {t('works.viewAll')}
+            <ArrowUpRightIcon className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
     </section>
   );
 }

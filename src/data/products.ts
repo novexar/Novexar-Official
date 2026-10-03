@@ -1,18 +1,18 @@
-import type { LucideIcon } from 'lucide-react';
+import type { Icon } from '@phosphor-icons/react';
 import {
-  Search,
-  HardDriveDownload,
-  Settings2,
-  Play,
-  RefreshCw,
-  Layers,
-  Puzzle,
-  DatabaseBackup,
-} from 'lucide-react';
+  ArrowsClockwiseIcon,
+  DatabaseIcon,
+  DownloadSimpleIcon,
+  MagnifyingGlassIcon,
+  PlayIcon,
+  PuzzlePieceIcon,
+  SlidersHorizontalIcon,
+  StackIcon,
+} from '@phosphor-icons/react';
 
 export interface ProductFeature {
   key: string;
-  icon: LucideIcon;
+  icon: Icon;
   /** Pro 限定機能なら true（PRO バッジを表示） */
   pro: boolean;
 }
@@ -58,14 +58,14 @@ export const PRODUCTS: readonly Product[] = [
       'https://novexar.lemonsqueezy.com/checkout/buy/512b1cf4-7162-4836-ae82-509f3c4859af',
     screenshotIds: ['dashboard', 'search', 'config', 'console'],
     features: [
-      { key: 'search', icon: Search, pro: false },
-      { key: 'install', icon: HardDriveDownload, pro: false },
-      { key: 'config', icon: Settings2, pro: false },
-      { key: 'launch', icon: Play, pro: false },
-      { key: 'update', icon: RefreshCw, pro: false },
-      { key: 'multi', icon: Layers, pro: true },
-      { key: 'mods', icon: Puzzle, pro: true },
-      { key: 'backup', icon: DatabaseBackup, pro: true },
+      { key: 'search', icon: MagnifyingGlassIcon, pro: false },
+      { key: 'install', icon: DownloadSimpleIcon, pro: false },
+      { key: 'config', icon: SlidersHorizontalIcon, pro: false },
+      { key: 'launch', icon: PlayIcon, pro: false },
+      { key: 'update', icon: ArrowsClockwiseIcon, pro: false },
+      { key: 'multi', icon: StackIcon, pro: true },
+      { key: 'mods', icon: PuzzlePieceIcon, pro: true },
+      { key: 'backup', icon: DatabaseIcon, pro: true },
     ],
     stepKeys: ['search', 'install', 'configure', 'launch'],
     pricingRows: [
